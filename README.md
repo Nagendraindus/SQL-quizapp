@@ -31,19 +31,21 @@ This is a simple SQL Quiz Game developed using Python and the Tkinter library. T
 
 3. **Install the required dependencies:**
 
-  
-
    > Note: No additional dependencies are needed beyond the Tkinter library, which is included with most Python installations.
 
 ## Usage
 
 1. **Run the application:**
 
-   ```bash
-   python up.py
+   ```py
+   python sql-app_v1.py
+   ```
+   or
+   ```
+   python sql-app_v2.py
    ```
 
-2. **Play the game:**
+3. **Play the game:**
 
    - Read the question displayed on the screen.
    - Select the correct answer from the options provided.
