@@ -1,5 +1,10 @@
 
 # SQL Quiz Game
+Version -1 :
+![image](https://github.com/user-attachments/assets/16825b1a-cbab-4f47-a64c-8f88083331b9)
+Version-2:
+![image](https://github.com/user-attachments/assets/86fbf724-d27c-42fa-bd7d-e4b68a8d15be)
+
 
 This is a simple SQL Quiz Game developed using Python and the Tkinter library. The game provides a graphical interface to test your SQL knowledge by answering multiple-choice questions. The application features a modern UI with customizable color schemes and fonts. It compliles the questions of CodeHelp "Common SQL Queries for Interviews". https://www.youtube.com/watch?v=vIq9zkpGWc8 
 
