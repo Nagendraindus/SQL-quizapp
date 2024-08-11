@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# Define questions, options, and answers
+# questions, options, and answers
 quiz_questions = [
     {
         "question": "Q-1. Write an SQL query to fetch \"FIRST_NAME\" from Worker table using the alias name as <WORKER_NAME>.",
@@ -455,7 +455,7 @@ quiz_questions = [
     }
 ]
 
-# Define color scheme
+#  color scheme
 COLOR_SCHEME = {
     "sapphire": "#4059ad",
     "blue_gray": "#6b9ac4",
@@ -469,7 +469,7 @@ COLOR_SCHEME = {
     "button_active": "#283e6e"
 }
 
-# Define font styles
+# font styles
 font_family = "Segoe UI"
 question_font = (font_family, 16, "bold")
 option_font = (font_family, 14)
@@ -485,21 +485,21 @@ class QuizGame:
         self.score = 0
         self.question_index = 0
 
-        # Variable to hold the selected option
+        # Variable to store selected option
         self.selected_option = tk.StringVar(value="")
 
-        # Create label for question
+        # label for question
         self.question_label = tk.Label(
             root, text="", font=question_font, wraplength=750,
             fg=COLOR_SCHEME["sapphire"], bg=COLOR_SCHEME["antiflash_white"]
         )
         self.question_label.pack(pady=20)
 
-        # Frame for options
+        # Frame options
         self.options_frame = tk.Frame(root, bg=COLOR_SCHEME["antiflash_white"])
         self.options_frame.pack(pady=10)
 
-        # Create radio buttons for options
+        # radio buttons for options
         self.option_radiobuttons = []
         for i in range(4):
             rb = tk.Radiobutton(
@@ -512,7 +512,7 @@ class QuizGame:
             rb.pack(pady=5, padx=20, anchor="w", ipadx=10, ipady=5)
             self.option_radiobuttons.append(rb)
 
-        # Create check button
+        # check button
         self.check_button = tk.Button(
             root, text="Check Answer", font=button_font,
             bg=COLOR_SCHEME["xanthous"], fg="black",
@@ -523,7 +523,7 @@ class QuizGame:
         self.check_button.bind("<Leave>", self.on_leave)
         self.check_button.pack(pady=10, ipadx=20, ipady=10)
 
-        # Create submit button
+        # submit button
         self.submit_button = tk.Button(
             root, text="Submit Test", font=button_font,
             bg=COLOR_SCHEME["xanthous"], fg="black",
@@ -534,14 +534,14 @@ class QuizGame:
         self.submit_button.bind("<Leave>", self.on_leave)
         self.submit_button.pack(pady=10, ipadx=20, ipady=10)
 
-        # Create label for score
+        # label for score
         self.score_label = tk.Label(
             root, text="Score: 0", font=score_font,
             fg=COLOR_SCHEME["sapphire"], bg=COLOR_SCHEME["antiflash_white"]
         )
         self.score_label.pack(pady=20)
 
-        # Show the first question
+        
         self.next_question()
 
     def on_enter(self, event):
@@ -573,23 +573,23 @@ class QuizGame:
         correct_answer = quiz_questions[self.question_index]["answer"]
         selected_text = self.selected_option.get()
 
-        # Disable all radio buttons
+   
         for rb in self.option_radiobuttons:
             rb.config(state=tk.DISABLED)
 
-        # Color the buttons according to the answer
+        # Colors the buttons according to correct and incorrect answer
         for rb in self.option_radiobuttons:
             if rb.cget("value") == correct_answer:
                 rb.config(bg=COLOR_SCHEME["correct"], fg="white")  # Correct answer
             elif rb.cget("value") == selected_text:
                 rb.config(bg=COLOR_SCHEME["incorrect"], fg="white")  # Incorrect answer
 
-        # Update the score if the selected answer is correct
+        # Updates the score if the selected answer is correct
         if selected_text == correct_answer:
             self.score += 1
             self.score_label.config(text=f"Score: {self.score}")
 
-        # Move to the next question after a short delay
+        # next question after a short delay
         self.root.after(1000, self.increment_question)
 
     def increment_question(self):
@@ -597,11 +597,11 @@ class QuizGame:
         self.next_question()
 
     def submit_test(self):
-        # Show the final score and end the quiz
+        # final score and end the quiz
         messagebox.showinfo("Test Submitted", f"You have submitted the test.\nYour final score is: {self.score}")
         self.root.destroy()
 
-# Run the quiz game
+
 root = tk.Tk()
 quiz_game = QuizGame(root)
 root.mainloop()
