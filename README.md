@@ -42,11 +42,11 @@ This is a simple SQL Quiz Game developed using Python and the Tkinter library. T
 
 1. **Run the application:**
 
-   ```py
+   ```bash
    python sql-app_v1.py
    ```
    or
-   ```
+   ```bash
    python sql-app_v2.py
    ```
 
@@ -62,7 +62,7 @@ This is a simple SQL Quiz Game developed using Python and the Tkinter library. T
 
 ### Color Scheme
 
-The color scheme of the application can be modified by changing the values in the `COLOR_SCHEME` dictionary within the `up.py` file:
+The color scheme of the application can be modified by changing the values in the `COLOR_SCHEME` dictionary within the `python` file:
 
 ```python
 COLOR_SCHEME = {
@@ -81,7 +81,7 @@ COLOR_SCHEME = {
 
 ### Font Styles
 
-The font styles can be adjusted by modifying the following variables in the `up.py` file:
+The font styles can be adjusted by modifying the following variables in the `python` file:
 
 ```python
 font_family = "Segoe UI"
@@ -93,7 +93,7 @@ score_font = (font_family, 14, "italic")
 
 ### Custom Icon
 
-To change the application icon, replace the `icon.ico` file located at the specified path in the `up.py` file:
+To change the application icon, replace the `icon.ico` file located at the specified path in the `python` file:
 
 ```python
 self.iconbitmap("C:/Users/Public/Desk/py/icon.ico")
