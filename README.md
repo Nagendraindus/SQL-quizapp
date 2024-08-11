@@ -24,8 +24,7 @@ This is a simple SQL Quiz Game developed using Python and the Tkinter library. T
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/sql-quiz-game.git
-   cd sql-quiz-game
+   git clone https://github.com/Nagendraindus/SQL-quizapp.git
    ```
 
 2. **Ensure you have Python installed (Python 3.6 or later is recommended).**
