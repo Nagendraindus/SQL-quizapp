@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# Define questions, options, and answers
+# questions, options, and answers
 quiz_questions = [
     {
         "question": "Q-1. Write an SQL query to fetch \"FIRST_NAME\" from Worker table using the alias name as <WORKER_NAME>.",
@@ -469,7 +469,7 @@ COLOR_SCHEME = {
     "button_active": "#283e6e"
 }
 
-# Define font styles
+# font styles
 font_family = "Segoe UI"
 question_font = (font_family, 16, "bold")
 option_font = (font_family, 14)
@@ -484,13 +484,13 @@ class CustomWindow(tk.Tk):
         self.overrideredirect(True)  # Remove the native window border
         self.configure(bg=COLOR_SCHEME["antiflash_white"])
 
-         # Use forward slashes
+
 
         # Custom Title Bar
         self.title_bar = tk.Frame(self, bg=COLOR_SCHEME["sapphire"], relief="raised", bd=2)
         self.title_bar.pack(fill=tk.X)
 
-        # Title
+   
         self.title_label = tk.Label(
             self.title_bar, text="SQL Quiz Game", bg=COLOR_SCHEME["sapphire"], fg="white", font=question_font
         )
@@ -503,11 +503,11 @@ class CustomWindow(tk.Tk):
         )
         self.close_button.pack(side=tk.RIGHT, padx=10)
 
-        # Dragging the Window
+        #  Window Dragging 
         self.title_bar.bind("<ButtonPress-1>", self.start_move)
         self.title_bar.bind("<B1-Motion>", self.do_move)
 
-        # Initialize the quiz game
+
         self.quiz_game = QuizGame(self)
 
     def start_move(self, event):
@@ -528,18 +528,18 @@ class QuizGame:
         self.score = 0
         self.question_index = 0
 
-        # Create label for question
+        #label for question
         self.question_label = tk.Label(
             root, text="", font=question_font, wraplength=600, fg=COLOR_SCHEME["sapphire"],
             bg=COLOR_SCHEME["antiflash_white"]
         )
         self.question_label.pack(pady=20)
 
-        # Create frame for options
+        # frame for options
         self.options_frame = tk.Frame(root, bg=COLOR_SCHEME["antiflash_white"])
         self.options_frame.pack(pady=10)
 
-        # Create labels for options using frames
+        # labels for options using frames
         self.option_frames = []
         for i in range(4):
             frame = tk.Frame(self.options_frame, bg=COLOR_SCHEME["option_bg"], relief="raised", bd=1)
@@ -554,21 +554,21 @@ class QuizGame:
 
             self.option_frames.append((frame, label))
 
-        # Create check answer button
+        # check answer button
         self.check_button = tk.Button(
             root, text="Check Answer", font=button_font, bg=COLOR_SCHEME["blue_gray"], fg="white",
             command=self.check_answer, activebackground=COLOR_SCHEME["button_active"]
         )
         self.check_button.pack(pady=10)
 
-        # Create submit button
+        # submit button
         self.submit_button = tk.Button(
             root, text="Submit Test", font=button_font, bg=COLOR_SCHEME["xanthous"], fg="black",
             command=self.submit_test, activebackground=COLOR_SCHEME["button_active"]
         )
         self.submit_button.pack(pady=10)
 
-        # Create label for score
+        # label for score
         self.score_label = tk.Label(
             root, text="Score: 0", font=score_font, fg=COLOR_SCHEME["sapphire"], bg=COLOR_SCHEME["antiflash_white"]
         )
@@ -577,7 +577,6 @@ class QuizGame:
         # Variable to track selected option
         self.selected_option = -1
 
-        # Show the first question
         self.next_question()
 
     def next_question(self):
@@ -587,7 +586,7 @@ class QuizGame:
             label.config(bg=COLOR_SCHEME["option_bg"], fg=COLOR_SCHEME["sapphire"])
             label.config(text="")
 
-        # Reset the selected option
+
         self.selected_option = -1
 
         # Check if there are more questions
@@ -648,6 +647,5 @@ class QuizGame:
         self.root.destroy()
 
 
-# Run the quiz game
 app = CustomWindow()
 app.mainloop()
